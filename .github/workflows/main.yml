@@ -3,7 +3,7 @@ name: hospital-tracker
 # set timer when script will run (12am local time)
 on:
   schedule:
-  - cron: 15 18 * * *
+  - cron: 0 19 * * *
 
 jobs: 
   autoscrape:
