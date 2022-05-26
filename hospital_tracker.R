@@ -1,5 +1,6 @@
+##############################################################
 # hospital occupancy tracker
-
+#
 # gets content from pdf and saves results to csv file
 # gets Occupancy rates in Montreal emergency rooms
 
@@ -61,21 +62,28 @@ df <- df %>%
   mutate(date = Sys.Date())
 
 
-# write to csv
-ER_tracker <- df %>% pivot_wider(names_from=hospital_name, values_from=occupancy_rate)
-
-# create csv file - run only once!
-# write.csv(ER_tracker, file = "data/hospitals.csv", row.names = FALSE)
-
-# add row to csv file
-write_csv(ER_tracker,"data/hospitals.csv",append = T)
+# write row to csv
+row <- df %>% pivot_wider(names_from=hospital_name, values_from=occupancy_rate)
+# write.csv(row, file = "data/hospitals.csv", row.names = FALSE) # run only once!
+write_csv(row,"data/hospitals.csv",append = T)
 
 
-# to do: sort from highest to lowest
+## visualisation
 
+# to do: fix date
+# visualize current occupancy rates
+df$occupancy_rate <- as.numeric(df$occupancy_rate)
+df %>% 
+    filter(hospital_name != "Total") %>%
+    ggplot(aes(x = reorder(hospital_name, occupancy_rate), y = occupancy_rate, fill = occupancy_rate)) + 
+    geom_col(position = "identity", size = 0.5, show.legend = FALSE) +
+    coord_flip() +
+    scale_fill_gradient2(low = "light green", high = "red", mid = "yellow", midpoint = 80) + 
+    theme_minimal() +
+    labs(title = "Occupancy rates (%)", subtitle = "in Montreal emergency rooms", caption = Sys.Date(), x = NULL, y = NULL) +
+    theme(panel.grid.minor = element_blank())
 
-# visualise recent data
+ggsave("img/today.png")
+ggsave("img/today.jpeg")
 
-
-# visualise tracker
-
+# to do: plot tracker
