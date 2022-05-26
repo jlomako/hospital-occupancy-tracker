@@ -3,12 +3,12 @@ name: hospital-tracker
 # set timer when script will run (12am local time)
 on:
   schedule:
-  - cron: 0 18 * * *
+  - cron: 15 18 * * *
 
 jobs: 
   autoscrape:
     # The type of runner that the job will run on
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
 
     # load repo and install R
     steps:
