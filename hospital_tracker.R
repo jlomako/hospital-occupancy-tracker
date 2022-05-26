@@ -73,6 +73,10 @@ write_csv(row,"data/hospitals.csv",append = T)
 # to do: fix date
 # visualize current occupancy rates
 df$occupancy_rate <- as.numeric(df$occupancy_rate)
+# fix names
+df$hospital_name <- str_replace(df$hospital_name, "Mortimer B", "Mortimer B. Davis")
+df$hospital_name <- str_replace(df$hospital_name, "l'Université de", "l'Université de Montréal")
+
 df %>% 
     filter(hospital_name != "Total") %>%
     ggplot(aes(x = reorder(hospital_name, occupancy_rate), y = occupancy_rate, fill = occupancy_rate)) + 
