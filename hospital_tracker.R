@@ -13,7 +13,7 @@ text_pdf <- pdf_text(url)
 # get rows from pdf
 by_row_pdf <- str_split(text_pdf, pattern = "\n")
 
-# # function to concatenate words from a list with single words 
+# function to concatenate words from a list with single words 
 get_string <- function(list_of_words){
   name = ""
   for (i in 1:length(list_of_words)){
@@ -60,7 +60,6 @@ df <- df %>%
   filter(hospital_name != "Sous total") %>%
   mutate(date = Sys.Date())
 
-df
 
 # write to csv
 ER_tracker <- df %>% pivot_wider(names_from=hospital_name, values_from=occupancy_rate)
@@ -73,7 +72,7 @@ write_csv(ER_tracker,"data/hospitals.csv",append = T)
 
 
 # to do: sort from highest to lowest
-ER_tracker
+
 
 # visualise recent data
 
