@@ -3,12 +3,12 @@ name: hospital-tracker
 # set timer when script will run (12am local time)
 on:
   schedule:
-  - cron: 0 19 * * *
+  - cron: 0 20 * * *
 
 jobs: 
   autoscrape:
     # The type of runner that the job will run on
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     # load repo and install R
     steps:
@@ -18,8 +18,9 @@ jobs:
     # Set-up R
     - name: Install packages
       run: |
-        R -e 'install.packages("tidyverse")'
         R -e 'install.packages("pdftools")'
+        R -e 'install.packages("tidyverse")'
+
     # Run R script
     - name: hospital-tracker
       run: Rscript hospital_tracker.R
