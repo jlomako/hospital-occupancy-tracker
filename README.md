@@ -3,7 +3,7 @@ reads daily updated content from pdf, extracts and plots data, saves results to 
 <br>
 tracks occupancy rates in local emergency rooms
 <br>
-updates every day at 12:00pm -> <b>paused for now</b>, as pdf does not seem to be accessible through github :[
+updates every day at 12:00pm <b>- paused for now - </b> pdf is not accessible through github actions :[
 <p>
 note to myself:<br> 
   <i>to run on macos, XQuartz needs to be installed in github actions file before pdftools is installed. 
@@ -16,4 +16,4 @@ note to myself:<br>
 
 
 <br><br>
-<img src = "img/today.png" width="600" />
+<img src = "img/today.png" width=80% />
