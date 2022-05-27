@@ -16,4 +16,4 @@ note to myself:<br>
 
 
 <br><br>
-<img src = "img/today.png" width=80% />
+<img src = "img/today.png" width=800 />
