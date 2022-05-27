@@ -15,6 +15,5 @@ note to myself:<br>
 
 
 
-
 <br><br>
 <img src = "img/today.png" width="600" />
