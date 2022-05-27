@@ -28,7 +28,8 @@ jobs:
 
     # Run R script
     - name: run R script
-      run: Rscript hospital_tracker.R
+      # run: Rscript hospital_tracker.R
+      run: Rscript getfile.R
       
  # Add new file in data folder, commit along with other modified files, push
     - name: commit files
