@@ -8,7 +8,8 @@
 library(tidyverse)
 library(pdftools)
 
-url <- "https://santemontreal.qc.ca/fileadmin/fichiers_portail/Donnees_urgence/urgence_quotidien_media.pdf"
+# url <- "https://santemontreal.qc.ca/fileadmin/fichiers_portail/Donnees_urgence/urgence_quotidien_media.pdf"
+url <- "test/urgence_quotidien_media.pdf"
 
 text_pdf <- pdf_text(url)
 # get rows from pdf
