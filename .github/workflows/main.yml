@@ -2,7 +2,7 @@ name: hospital-tracker
 
 # set timer when script will run (12am local time)
 on:
-  # push:
+  push:
     branches: main
 
 jobs: 
@@ -28,7 +28,8 @@ jobs:
 
     # Run R script
     - name: run R script hospital-tracker
-      run: Rscript hospital_tracker.R
+      run: Rscript getpdf.R
+      # run: Rscript hospital_tracker.R
       
  # Add new file in data folder, commit along with other modified files, push
     - name: commit files
