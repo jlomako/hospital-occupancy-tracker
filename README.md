@@ -3,7 +3,7 @@ reads daily updated content from pdf, extracts and plots data, saves results to 
 <br>
 tracks occupancy rates in local emergency rooms
 <br>
-updates every day at 12:00pm <b>- paused for now - </b> pdf is not accessible through github actions :[
+updates every day at 12pm <b>--- paused for now --- </b>because pdf is not accessible through github actions :[
 <p>
 note to myself:<br>
 <i>
