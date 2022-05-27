@@ -2,11 +2,11 @@ name: hospital-tracker
 
 # set timer when script will run (12am local time)
 on:
-#  push:
+  push:
     branches: main
 
 jobs: 
-  autoscrape:
+  pdfscrape:
     # The type of runner that the job will run on
     runs-on: macos-10.15
 
@@ -16,22 +16,22 @@ jobs:
     - uses: r-lib/actions/setup-r@master
 
     # install xquartz for macos
-    - name: Install XQuartz on macOS
+    - name: install XQuartz on macOS
       if: runner.os == 'macOS'
       run: brew install xquartz --cask
 
     # Set-up R
-    - name: Install packages
+    - name: install R packages
       run: |
         R -e 'install.packages("pdftools")'
         R -e 'install.packages("tidyverse")'
 
     # Run R script
-    - name: hospital-tracker
+    - name: run R script hospital-tracker
       run: Rscript hospital_tracker.R
       
  # Add new file in data folder, commit along with other modified files, push
-    - name: Commit files
+    - name: commit files
       run: |
         git config --local user.name actions-user
         git config --local user.email "actions@github.com"
