@@ -78,28 +78,28 @@ row <- df %>% pivot_wider(names_from=hospital_name, values_from=occupancy_rate)
 write_csv(row,"data/hospitals.csv",append = T)
 
 
-## visualisation
+############# visualisation
 
-# to do: fix date
-# visualize current occupancy rates
+# plot current occupancy rates
 df$occupancy_rate <- as.numeric(df$occupancy_rate)
 # fix names
 df$hospital_name <- str_replace(df$hospital_name, "Mortimer B", "Mortimer B. Davis")
 df$hospital_name <- str_replace(df$hospital_name, "l'Université de", "l'Université de Montréal")
 df$hospital_name <- str_replace(df$hospital_name, "Maisonneuve Pavillon", "Maisonneuve/ Pavillon Marcel-Lamoureux")
 
-
+update_txt <- paste("\nlast update:",Sys.Date())
 df %>% 
     filter(hospital_name != "Total") %>%
     ggplot(aes(x = reorder(hospital_name, occupancy_rate), y = occupancy_rate, fill = occupancy_rate)) + 
-    geom_col(position = "identity", size = 0.5, show.legend = FALSE) +
+    geom_col(position = "identity", size = 0.5, show.legend = F) +
+    geom_text(aes(label = paste0(occupancy_rate,"%")), hjust = 1, colour = "white", size = 3) +
     coord_flip() +
     scale_fill_gradient2(low = "light green", high = "red", mid = "yellow", midpoint = 80) + 
     theme_minimal() +
-    labs(title = "Occupancy rates (%)", subtitle = "in Montreal emergency rooms", caption = Sys.Date(), x = NULL, y = NULL) +
+    labs(caption = update_txt, x = NULL, y = NULL) +
     theme(panel.grid.minor = element_blank())
 
-ggsave("img/today.png")
-ggsave("img/today.jpeg")
+ggsave("img/today.png", width = 7)
+ggsave("img/today.jpeg", width = 7)
 
 # to do: plot tracker
