@@ -2,7 +2,7 @@ name: hospital-tracker
 
 # set timer when script will run (12am local time)
 on:
-#  push:
+  push:
     branches: main
 
 jobs: 
