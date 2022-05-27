@@ -99,7 +99,7 @@ df %>%
     labs(caption = update_txt, x = NULL, y = NULL) +
     theme(panel.grid.minor = element_blank())
 
-ggsave("img/today.png", width = 7)
-ggsave("img/today.jpeg", width = 7)
+ggsave("img/today.png")
+ggsave("img/today.jpeg")
 
 # to do: plot tracker
