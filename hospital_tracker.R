@@ -86,6 +86,8 @@ df$occupancy_rate <- as.numeric(df$occupancy_rate)
 # fix names
 df$hospital_name <- str_replace(df$hospital_name, "Mortimer B", "Mortimer B. Davis")
 df$hospital_name <- str_replace(df$hospital_name, "l'Université de", "l'Université de Montréal")
+df$hospital_name <- str_replace(df$hospital_name, "Maisonneuve Pavillon", "Maisonneuve/ Pavillon Marcel-Lamoureux")
+
 
 df %>% 
     filter(hospital_name != "Total") %>%
