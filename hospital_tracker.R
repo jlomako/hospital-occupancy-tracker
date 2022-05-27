@@ -8,15 +8,18 @@
 library(tidyverse)
 library(pdftools)
 
+# does does not work from github actions: server error 500
 # url <- "https://santemontreal.qc.ca/fileadmin/fichiers_portail/Donnees_urgence/urgence_quotidien_media.pdf"
-url <- "test/urgence_quotidien_media.pdf"
 
-# line does not work when run on github actions:
-# text_pdf <- pdf_text(url) 
-
+# does does not work from github actions: server error 500
 # little workaround: copy pdf to local directory and read from there 
-download.file(url, "pdf/urgence_quotidien_media.pdf", mode="wb") 
-text_pdf <- pdf_text("pdf/urgence_quotidien_media.pdf")
+# download.file(url, "pdf/urgence_quotidien_media.pdf", mode="wb") 
+
+# use local copy
+url <- "pdf/urgence_quotidien_media.pdf"
+
+# read pdf
+text_pdf <- pdf_text(url) 
 
 # get rows from pdf
 by_row_pdf <- str_split(text_pdf, pattern = "\n")
