@@ -7,8 +7,8 @@ updates every day at 12:00pm <b>- paused for now - </b> pdf is not accessible th
 <p>
 note to myself:<br>
 <i>
-- in GitHub Actions: to run on macos, XQuartz needs to be installed before pdftools is installed. 
-Add "run: brew install xquartz --cask" to yml file.
+- to run workflow on macos, XQuartz needs to be installed before pdftools is installed. 
+Add "run: brew install xquartz --cask" to yml file
 <br>
 - re-activate workflow under Actions > Workflows
 </i>
