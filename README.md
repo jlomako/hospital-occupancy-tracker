@@ -16,7 +16,5 @@ Add "run: brew install xquartz --cask" to yml file
 [![hospital-tracker](https://github.com/jlomako/hospital-occupancy-tracker/actions/workflows/main.yml/badge.svg)](https://github.com/jlomako/hospital-occupancy-tracker/actions/workflows/main.yml)
 
 
-
-
-<br><br>
+<h2>Occupancy rates in Montreal emergency rooms</h2>
 <img src = "img/today.png" width=800 />
