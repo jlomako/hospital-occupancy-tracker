@@ -13,7 +13,7 @@ library(pdftools)
 
 # does does not work from github actions: server error 500
 # little workaround: copy pdf to local directory and read from there 
-# download.file(url, "pdf/urgence_quotidien_media.pdf", mode="wb") 
+# download.file(url, "pdf/urgence_quotidien_media.pdf", mode="wb", headers = c("User-Agent" = "Chrome or something")) 
 
 # use local copy
 url <- "pdf/urgence_quotidien_media.pdf"
