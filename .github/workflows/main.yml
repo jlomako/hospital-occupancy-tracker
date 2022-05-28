@@ -20,7 +20,7 @@ jobs:
       if: runner.os == 'macOS'
       run: brew install xquartz --cask
 
-    # Set-up R
+    # Set-up R 
     - name: install R packages
       run: |
         R -e 'install.packages("pdftools")'
