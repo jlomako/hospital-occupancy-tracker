@@ -3,7 +3,7 @@ reads daily updated content from pdf, extracts and plots data, saves results to 
 <br>
 tracks occupancy rates in local emergency rooms
 <br>
-updates every day at 12pm <b>--- paused for now --- </b>because pdf is not accessible through github actions :[
+updates every day at 12pm <b>--- paused for now ---> </b>script works but pdf access is denied when running through github actions :[
 <p>
 note to myself:<br>
 <i>
@@ -11,6 +11,8 @@ note to myself:<br>
 Add "run: brew install xquartz --cask" to yml file
 <br>
 - re-activate workflow under Actions > Workflows
+<br>
+- to do: try with different ip?
 </i>
 
 [![hospital-tracker](https://github.com/jlomako/hospital-occupancy-tracker/actions/workflows/main.yml/badge.svg)](https://github.com/jlomako/hospital-occupancy-tracker/actions/workflows/main.yml)
