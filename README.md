@@ -3,7 +3,7 @@ reads daily updated content from pdf, extracts and plots data, saves results to 
 <br>
 tracks occupancy rates in local emergency rooms
 <br>
-updates every day at 12pm <b>--- paused for now ---> </b>script works but pdf access is denied when running through github actions :[
+updates every day at 12pm <b>--- paused for now ---> </b>script works but access to pdf is denied when running through github actions :[
 <p>
 note to myself:<br>
 <i>
