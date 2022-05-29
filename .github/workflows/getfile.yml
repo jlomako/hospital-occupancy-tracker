@@ -1,4 +1,4 @@
-name: hospital-tracker
+name: getfile-test
 
 # set timer when script will run (12am local time)
 on:
@@ -6,9 +6,9 @@ on:
     branches: main
 
 jobs: 
-  pdfscrape:
+  getfile:
     # The type of runner that the job will run on
-    runs-on: macos-10.15
+    runs-on: macos-latest
 
     # load repo and install R
     steps:
@@ -30,7 +30,7 @@ jobs:
       run: |
         git config --local user.name actions-user
         git config --local user.email "actions@github.com"
-        git add data/*
+        git add pdf/*
         git commit -am "Scheduled Github Action on $(date)"
         git push origin main
       env:
