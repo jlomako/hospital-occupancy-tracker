@@ -1,4 +1,6 @@
-name: getfile-test
+# loads R, downloads pdf from website and saves pdf to directory
+
+name: getfile
 
 # set timer when script will run (12am local time)
 on:
@@ -14,12 +16,6 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - uses: r-lib/actions/setup-r@master
-
-    # Set-up R 
-    #- name: install R packages
-    #  run: |
-    #    R -e 'install.packages("pdftools")'
-    #    R -e 'install.packages("tidyverse")'
 
     # Run R script
     - name: run R script
