@@ -7,7 +7,7 @@ library(tidyverse)
 url <- "https://www.msss.gouv.qc.ca/professionnels/statistiques/documents/urgences/Releve_horaire_urgences_7jours.csv"
 
 # read csv file
-df <- read.csv(url) 
+df <- read.csv(url, encoding = "ANSI") 
 
 update <- as.Date(df$Mise_a_jour[1])
 update_time <- df$Heure_de_l.extraction_.image.[1]
@@ -31,8 +31,8 @@ write.table(row, "data/hospitals.csv", append = T, row.names = F, col.names = F,
 # visualization
 
 # replace french characters:
-df$hospital_name <- str_replace(df$hospital_name, "é|é", "e")
-df$hospital_name <- str_replace(df$hospital_name, "ô", "o")
+# df$hospital_name <- str_replace(df$hospital_name, "é|é", "e")
+# df$hospital_name <- str_replace(df$hospital_name, "ô", "o")
 
 update_txt <- paste("last update:", update, "at", update_time)
 df %>% 
