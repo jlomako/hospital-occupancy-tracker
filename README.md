@@ -1,5 +1,5 @@
 # hospital-occupancy-tracker
-workflow that reads daily updated content, processes and plots data, and saves result to csv file
+scheduled workflow that reads daily updated content from web, sorts/processes data, saves new data to csv, plots data
 <br>
 tracks occupancy rates of local emergency rooms
 <br>
