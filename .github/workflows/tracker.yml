@@ -23,12 +23,10 @@ jobs:
     # Set-up R
     - name: install R packages
       run: |
-        R -e 'install.packages("dplyr")'
-        R -e 'install.packages("stringr")'
-        R -e 'install.packages("ggplot2")'
-        R -e 'install.packages("tidyr")'
+        R -e 'install.packages("tidyverse")'
+        
     # Run R script
-    - name: hospital_occupancy_tracker
+    - name: run R script
       run: Rscript hospital_occupancy_tracker.R
       
  # Add new file in data folder, commit along with other modified files, push
