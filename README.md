@@ -15,7 +15,7 @@ Add "run: brew install xquartz --cask" to yml file
 - to do: adjust R script to download file from different destination :) 
 </i>
 
-[![hospital-tracker](https://github.com/jlomako/hospital-occupancy-tracker/actions/workflows/tracker.yml/badge.svg)](https://github.com/jlomako/hospital-occupancy-tracker/actions/workflows/tracker.yml)
+[![hospital-tracker](https://github.com/jlomako/hospital-occupancy-tracker/actions/workflows/main.yml/badge.svg)](https://github.com/jlomako/hospital-occupancy-tracker/actions/workflows/main.yml)
 
 
 ## Occupancy rates in Montreal emergency rooms
