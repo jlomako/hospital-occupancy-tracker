@@ -30,6 +30,10 @@ write.table(row, "data/hospitals.csv", append = T, row.names = F, col.names = F,
 
 # visualization
 
+# replace french characters:
+df$hospital_name <- str_replace(df$hospital_name, "é|é", "e")
+df$hospital_name <- str_replace(df$hospital_name, "ô", "o")
+
 update_txt <- paste("last update:", update, "at", update_time)
 df %>% 
   filter(hospital_name != "Total") %>%
@@ -45,6 +49,8 @@ df %>%
 ggsave("img/today.png")
 ggsave("img/today.jpeg")
 
+# don't create pdf
+pdf(NULL)
 
 # to do:
 # visualization tracker 
