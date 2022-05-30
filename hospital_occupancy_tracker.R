@@ -1,13 +1,14 @@
 ########################################################################
 # hospital occupancy tracker
+# reads file from web, sorts/processes data, saves new data to csv, plots data
 
 # load packages
 library(tidyverse)
 
 url <- "https://www.msss.gouv.qc.ca/professionnels/statistiques/documents/urgences/Releve_horaire_urgences_7jours.csv"
 
-# read csv file
-df <- read.csv(url, encoding = "ISO-8859-1") 
+# read csv file with french characters
+df <- read.csv(url, encoding = "latin1")
 
 update <- as.Date(df$Mise_a_jour[1])
 update_time <- df$Heure_de_l.extraction_.image.[1]
@@ -29,10 +30,6 @@ row <- df %>% pivot_wider(names_from=hospital_name, values_from=occupancy_rate)
 write.table(row, "data/hospitals.csv", append = T, row.names = F, col.names = F, sep = ",")
 
 # visualization
-
-# replace french characters:
-# df$hospital_name <- str_replace(df$hospital_name, "é|é", "e")
-# df$hospital_name <- str_replace(df$hospital_name, "ô", "o")
 
 update_txt <- paste("last update:", update, "at", update_time)
 df %>% 
