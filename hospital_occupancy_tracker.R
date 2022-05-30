@@ -1,9 +1,8 @@
+########################################################################
 # hospital occupancy tracker
 
-library(dplyr)
-library(stringr)
-library(tidyr)
-library(ggplot2)
+# load packages
+library(tidyverse)
 
 url <- "https://www.msss.gouv.qc.ca/professionnels/statistiques/documents/urgences/Releve_horaire_urgences_7jours.csv"
 
