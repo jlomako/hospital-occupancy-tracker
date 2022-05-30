@@ -1,0 +1,44 @@
+name: hospital-tracker
+
+# set timer when script will run (12am)
+# on:
+#  schedule:
+#  - cron: 0 16 * * *
+
+# alternatively, on push
+on:
+  push:
+    branches: main
+
+jobs: 
+  hospital-tracker:
+    # type of runner
+    runs-on: macos-latest
+
+    # load repo and install R
+    steps:
+    - uses: actions/checkout@master
+    - uses: r-lib/actions/setup-r@master
+
+    # Set-up R
+    - name: install R packages
+      run: |
+        R -e 'install.packages("dplyr")'
+        R -e 'install.packages("stringr")'
+        R -e 'install.packages("ggplot2")'
+        R -e 'install.packages("tidyr")'
+    # Run R script
+    - name: hospital_occupancy_tracker
+      run: Rscript hospital_occupancy_tracker.R
+      
+ # Add new file in data folder, commit along with other modified files, push
+    - name: commit files
+      run: |
+        git config --local user.name actions-user
+        git config --local user.email "actions@github.com"
+        git add data/*
+        git commit -am "Scheduled Github Action on $(date)"
+        git push origin main
+      env:
+        REPO_KEY: ${{secrets.GITHUB_TOKEN}}
+        username: github-actions
