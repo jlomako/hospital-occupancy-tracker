@@ -26,8 +26,8 @@ df <- df %>% add_row(hospital_name = "Total", beds_occ = total[1,2], beds_total 
 
 # write row to csv
 row <- df %>% pivot_wider(names_from=hospital_name, values_from=occupancy_rate)
-write.csv(row, file = "data/hospitals.csv", row.names = FALSE) # creates file, run only once!
-# write.table(row, "data/hospitals.csv", append = T, row.names = F, col.names = F, sep = ",")
+# write.csv(row, file = "data/hospitals.csv", row.names = FALSE) # creates file, run only once!
+write.table(row, "data/hospitals.csv", append = T, row.names = F, col.names = F, sep = ",")
 
 # visualization
 
