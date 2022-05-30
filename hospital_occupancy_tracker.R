@@ -7,7 +7,7 @@ library(tidyverse)
 url <- "https://www.msss.gouv.qc.ca/professionnels/statistiques/documents/urgences/Releve_horaire_urgences_7jours.csv"
 
 # read csv file
-df <- read.csv(url, encoding = "latin1") 
+df <- read.csv(url, encoding = "ISO-8859-1") 
 
 update <- as.Date(df$Mise_a_jour[1])
 update_time <- df$Heure_de_l.extraction_.image.[1]
