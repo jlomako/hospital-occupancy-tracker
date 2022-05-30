@@ -1,19 +1,19 @@
 # hospital-occupancy-tracker
-reads daily updated content from pdf, extracts and plots data, saves results to csv file
+workflow that reads daily updated content, processes and plots data, and saves result to csv file
 <br>
 tracks occupancy rates of local emergency rooms
 <br>
-updates every day at 12pm <b>--- paused for now ---> </b>script works but access to pdf is denied when running through github actions :[
+updates every day at 16 UTC
 <p>
 note to myself:<br>
 <i>
-- to run workflow on macos, XQuartz needs to be installed before pdftools is installed. 
+- problem when extracting pdf with package "pdftools" in workflow: use runner macos-10.15 and install XQuartz before pdftools is installed. 
 Add "run: brew install xquartz --cask" to yml file
 <br>
-- re-activate workflow under Actions > Workflows
+- to read csv files with french characters use encoding = "latin1"
 <br>
-- to do: adjust R script to download file from different destination :) 
-</i>
+- re-activate workflow under Actions > Workflows
+ </i>
 
 [![hospital-tracker](https://github.com/jlomako/hospital-occupancy-tracker/actions/workflows/main.yml/badge.svg)](https://github.com/jlomako/hospital-occupancy-tracker/actions/workflows/main.yml)
 
