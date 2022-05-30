@@ -31,7 +31,7 @@ write.table(row, "data/hospitals.csv", append = T, row.names = F, col.names = F,
 
 # visualization
 
-update_txt <- paste("last update:", update, "at", update_time)
+update_txt <- paste("\nlast update:", update, "at", update_time)
 df %>% 
   filter(hospital_name != "Total") %>%
   ggplot(aes(x = reorder(hospital_name, occupancy_rate), y = occupancy_rate, fill = occupancy_rate)) + 
