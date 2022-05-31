@@ -18,8 +18,8 @@ df <- df %>% select(etab = Nom_etablissement, hospital_name = Nom_installation, 
   filter(str_detect(etab, "Montr|CHUM|CUSM|CHU Sainte-Justine")) %>%
   mutate(beds_total = as.numeric(beds_total), beds_occ = as.numeric(beds_occ)) %>% 
   select(hospital_name, beds_occ, beds_total)
-# calculate total and add to df 
-df %>% summarise(sum(beds_total), sum(beds_occ)) -> total
+# calculate total and add to df
+df %>% summarise(sum(beds_total, na.rm=TRUE), sum(beds_occ, na.rm=TRUE)) -> total
 df <- df %>% add_row(hospital_name = "Total", beds_occ = total[1,2], beds_total = total[1,1] ) %>%
   mutate(occupancy_rate = round(100*(beds_occ/beds_total)), Date = update) %>%
   select(Date, hospital_name, occupancy_rate)
@@ -34,6 +34,7 @@ write.table(row, "data/hospitals.csv", append = T, row.names = F, col.names = F,
 update_txt <- paste("\nlast update:", update, "at", update_time)
 df %>% 
   filter(hospital_name != "Total") %>%
+  filter(!is.na(occupancy_rate)) %>%
   ggplot(aes(x = reorder(hospital_name, occupancy_rate), y = occupancy_rate, fill = occupancy_rate)) + 
   geom_col(position = "identity", size = 0.5, show.legend = F) +
   geom_text(aes(label = paste0(occupancy_rate,"%")), hjust = 1, colour = "white", size = 3) +
