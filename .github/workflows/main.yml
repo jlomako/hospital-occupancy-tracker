@@ -1,9 +1,9 @@
 name: hospital-tracker
 
-# set timer when script will run (16utc = 12am)
+# set timer when script will run (16utc = 1pm)
 on:
-  schedule:
-  - cron: 0 16 * * *
+  push:
+    branches: main
 
 # alternatively, on push
 # on:
