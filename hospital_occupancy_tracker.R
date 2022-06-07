@@ -47,8 +47,8 @@ df %>%
 ggsave("img/today.png")
 ggsave("img/today.jpeg")
 
-# don't create pdf
-pdf(NULL)
+# remove automatically generated pdf
+file.remove("Rplots.pdf")
 
 # to do:
 # visualization tracker 
