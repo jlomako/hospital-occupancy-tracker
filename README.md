@@ -8,7 +8,7 @@ tracks occupancy rates in local emergency rooms, updates every day at 11am
 <b>note to myself:</b><br>
 * to read csv files with french characters use <code>encoding = "latin1"</code><br> 
 * R automatically generates Rplot.pdf together with ggsave --> still looking for a solution to prevent R from doing that<br>
-* pdf is not saved to directory because using <code>git add data/* img/*</code> will only save changes in these directories, using <code>git add --all</code> would save all changes (incl. the generated pdf)
+* using <code>git add data/* img/*</code> only saves changes in these directories, using <code>git add --all</code> would save everything (incl. that pdf)
  
 
 [![hospital-tracker](https://github.com/jlomako/hospital-occupancy-tracker/actions/workflows/main.yml/badge.svg)](https://github.com/jlomako/hospital-occupancy-tracker/actions/workflows/main.yml)
