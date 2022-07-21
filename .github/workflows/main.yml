@@ -5,7 +5,7 @@ name: hospital-tracker
 #  schedule:
 #  - cron: 0 16 * * *
 
-# alternatively, on push
+# alternatively on push
   on:
     push:
       branches: 
