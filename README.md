@@ -14,4 +14,4 @@ tracks occupancy rates in local emergency rooms, updates daily
 ### note to myself:
 * to read csv files with french characters use <code>encoding = "latin1"</code>
 * R automatically generates Rplot.pdf together with ggsave --> still looking for a solution to prevent R from doing that<br> --> pdf won't be saved with <code>git add data/* img/*</code>
-
+* runs on macos-11 now (GH stopped supporting macos-10.15)
