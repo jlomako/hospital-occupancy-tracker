@@ -7,8 +7,9 @@ name: hospital-tracker
 
 # alternatively, on push
   on:
-   push:
-    branches: main
+    push:
+      branches: 
+        - main
 
 jobs: 
   hospital-tracker:
