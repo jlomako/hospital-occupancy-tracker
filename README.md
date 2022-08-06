@@ -6,7 +6,7 @@ reads content from web, sorts/processes data, saves new data to csv, plots data
 
 [![hospital-tracker](https://github.com/jlomako/hospital-occupancy-tracker/actions/workflows/main.yml/badge.svg)](https://github.com/jlomako/hospital-occupancy-tracker/actions/workflows/main.yml)
 
-## Visit my interactive Shiny app to explore data: <b><a href="jlomako.shinyapps.io/occupancy_app/">
+## Visit my interactive Shiny app to explore data: <b><a href="https://jlomako.shinyapps.io/occupancy_app/">
 ### jlomako.shinyapps.io/occupancy_app/</a></b>
 <br><br><br>
  
