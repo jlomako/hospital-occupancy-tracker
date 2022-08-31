@@ -3,7 +3,7 @@
 
 * github action that tracks occupancy rates in emergency rooms in Montreal
 * reads content from web, sorts/processes data, saves new data to csv, plots data
-* collects data for shiny app: <a href = "https://jlomako.shinyapps.io/occupancy_app/"><b>
+* collects data for website/ shiny app: <a href = "https://jlomako.shinyapps.io/occupancy_app/"><b>
 jlomako.shinyapps.io/occupancy_app/</b></a>
 <br><br>
  
