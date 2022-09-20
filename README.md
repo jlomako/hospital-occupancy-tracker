@@ -14,3 +14,4 @@ jlomako.shinyapps.io/occupancy_app/</b></a>
 * to read csv files with french characters use <code>encoding = "latin1"</code>
 * R automatically generates Rplot.pdf together with ggsave --> pdf won't be saved with <code>git add data/* img/*</code>
 * runs on macos-11 now since GH stopped supporting macos-10.15
+* data source wasn't updated from Sep 15-19, replaced missing data with data from pdfscraper (ca. +1h) 
