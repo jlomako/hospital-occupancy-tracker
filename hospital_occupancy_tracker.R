@@ -34,19 +34,20 @@ write.table(row, "data/hospitals.csv", append = T, row.names = F, col.names = F,
 update_txt <- paste("\nlast update:", update, "at", update_time)
 df %>% 
   filter(hospital_name != "Total") %>%
-  filter(!is.na(occupancy_rate)) %>%
-  ggplot(aes(x = reorder(hospital_name, occupancy_rate), y = occupancy_rate, fill = occupancy_rate)) + 
-  geom_col(position = "identity", size = 0.5, show.legend = F) +
-  geom_text(aes(label = paste0(occupancy_rate,"%")), hjust = 1, colour = "white", size = 3) +
+  filter(hospital_name != "Total Montréal") %>%
+  mutate(occupancy_rate = ifelse(is.na(occupancy_rate), -0.01, occupancy_rate)) %>%
+  ggplot(aes(x = reorder(hospital_name, occupancy_rate), y = occupancy_rate, fill = occupancy_rate)) +
+  geom_col(position = "identity", size = 3, show.legend = F) +
+  scale_y_continuous(expand = c(0,0)) + # gets rid of gap between y-axis and plot
+  geom_text(aes(label = if_else(occupancy_rate < 0, "no data", NULL)), colour = "grey", size = 3, hjust = "inward", na.rm=T) +
+  geom_text(aes(label = if_else(occupancy_rate >= 0 & occupancy_rate <= 49, paste0(occupancy_rate,"%"), NULL)), colour = "#595959", size = 3, hjust = -0.1, position = position_stack(vjust = 0), na.rm=T) +
+  geom_text(aes(label = if_else(occupancy_rate > 49, paste0(occupancy_rate,"%"), NULL)), colour = "white", size = 3, hjust = -0.1, position = position_stack(vjust = 0), na.rm=T) +
   coord_flip() +
-  scale_fill_gradient2(low = "light green", high = "red", mid = "yellow", midpoint = 80) + 
+  scale_fill_distiller(palette = "YlOrRd", direction = 1, limits = c(0,max(df$occupancy_rate))) + 
   theme_minimal() +
-  labs(caption = update_txt, x = NULL, y = NULL) +
-  theme(panel.grid.minor = element_blank())
+  labs(x = NULL, y = NULL, caption = paste(update_txt)) +
+  theme(panel.grid = element_blank(), axis.ticks.x = element_blank(), axis.text.x = element_blank())
 
 ggsave("img/today.png")
 ggsave("img/today.jpeg")
 
-
-# to do:
-# visualization tracker 
