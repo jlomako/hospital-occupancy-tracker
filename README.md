@@ -1,14 +1,15 @@
-# hospital-occupancy-tracker
+# Occupancy rates in Montréal emergency rooms
+## hospital-occupancy-tracker
 [![hospital-tracker](https://github.com/jlomako/hospital-occupancy-tracker/actions/workflows/main.yml/badge.svg)](https://github.com/jlomako/hospital-occupancy-tracker/actions/workflows/main.yml)
 
 * github action that tracks occupancy rates in emergency rooms in Montreal
-* reads content from web, sorts/processes data, saves new data to csv, plots data
-* collects data for website/ shiny app: <a href = "https://jlomako.shinyapps.io/occupancy_app/"><b>
-jlomako.shinyapps.io/occupancy_app/</b></a>
+* reads content from web, sorts/ processes data, saves new data to csv, plots data
+* collects data for <a href = "https://jlomako.shinyapps.io/occupancy_app/"><b>
+occupancy app</b></a>
+* data is used by repository: prophet bot to calculate forecast
 <br><br>
  
-### Occupancy rates in Montréal emergency rooms
-<img src = "img/today.png" width=560>
+
 
 ### note to myself:
 * to read csv files with french characters use <code>encoding = "latin1"</code>
