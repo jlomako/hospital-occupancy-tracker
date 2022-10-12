@@ -1,4 +1,4 @@
-name: hospital-tracker
+name: OLD hospital-tracker
 
 # set timer when script will run (16utc = 12am)
 on:
