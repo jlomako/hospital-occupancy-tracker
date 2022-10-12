@@ -1,7 +1,7 @@
 # hospital-occupancy-tracker
 [![hospital_occupancy_tracker](https://github.com/jlomako/hospital-occupancy-tracker/actions/workflows/hospital_occupancy_tracker.yml/badge.svg)](https://github.com/jlomako/hospital-occupancy-tracker/actions/workflows/hospital_occupancy_tracker.yml)
 
-This bot tracks occupancy rates in emergency rooms in Montreal. It reads content from web, sorts and processes data, and saves new data to csv. The collected data is used by <a href = "https://jlomako.shinyapps.io/occupancy_app/"><b>occupancy app</b></a> and by <a href="https://github.com/jlomako/prophet-bot"><b>prophet bot</b></a> to calculate forecasts.
+This bot tracks occupancy rates in emergency rooms in Montreal. It reads content from web, sorts and processes data, and saves new data to csv. The collected data is used by <a href = "https://github.com/jlomako/Montreal-ER"><b>Montreal-ER</b></a> and by <a href="https://github.com/jlomako/prophet-bot"><b>prophet bot</b></a> to calculate forecasts.
 
 
 ### note to myself:
