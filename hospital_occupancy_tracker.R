@@ -2,8 +2,14 @@
 # hospital occupancy tracker
 # reads file from web, sorts/processes data, saves new data to csv, plots data
 
+# renv::init()
+
 # load packages
-library(tidyverse)
+library(dplyr)
+library(stringr)
+library(tidyr)
+library(ggplot2)
+
 
 url <- "https://www.msss.gouv.qc.ca/professionnels/statistiques/documents/urgences/Releve_horaire_urgences_7jours.csv"
 
@@ -48,6 +54,5 @@ df %>%
   labs(x = NULL, y = NULL, caption = paste(update_txt)) +
   theme(panel.grid = element_blank(), axis.ticks.x = element_blank(), axis.text.x = element_blank())
 
-ggsave("img/today.png")
+#ggsave("img/today.png")
 ggsave("img/today.jpeg")
-
