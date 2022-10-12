@@ -6,7 +6,7 @@
 * reads content from web, sorts/ processes data, saves new data to csv, plots data
 * collects data for <a href = "https://jlomako.shinyapps.io/occupancy_app/"><b>
 occupancy app</b></a>
-* data is used by <a href="https://github.com/jlomako/prophet-bot">prophet bot</a> to calculate forecast
+* data is used by <a href="https://github.com/jlomako/prophet-bot"><b>prophet bot</b></a> to calculate forecast
 <br><br>
  
 
