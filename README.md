@@ -1,6 +1,6 @@
 # Occupancy rates in Montréal emergency rooms
 ## hospital-occupancy-tracker
-[![hospital-tracker](https://github.com/jlomako/hospital-occupancy-tracker/actions/workflows/main.yml/badge.svg)](https://github.com/jlomako/hospital-occupancy-tracker/actions/workflows/main.yml)
+[![hospital_occupancy_tracker](https://github.com/jlomako/hospital-occupancy-tracker/actions/workflows/hospital_occupancy_tracker.yml/badge.svg)](https://github.com/jlomako/hospital-occupancy-tracker/actions/workflows/hospital_occupancy_tracker.yml)
 
 * github action that tracks occupancy rates in emergency rooms in Montreal
 * reads content from web, sorts/ processes data, saves new data to csv, plots data
