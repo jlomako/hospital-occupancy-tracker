@@ -3,7 +3,6 @@
 
 This bot uses cron jobs to track occupancy rates in local emergency rooms. It reads content from a website, sorts and processes data, and saves new data to csv. The collected data is used by <a href = "https://github.com/jlomako/Montreal-ER"><b>Montreal-ER</b></a> and by another bot <a href="https://github.com/jlomako/prophet-bot"><b>(prophet bot)</b></a> to calculate forecasts.
 
-
 ### note to myself:
 * to read csv files with french characters use <code>encoding = "latin1"</code>
 * R automatically generates Rplot.pdf together with ggsave --> pdf won't be saved with <code>git add data/* img/*</code>
