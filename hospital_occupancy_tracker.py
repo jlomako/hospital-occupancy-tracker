@@ -1,7 +1,7 @@
 import pandas as pd
 
 # read data
-url <- "https://www.msss.gouv.qc.ca/professionnels/statistiques/documents/urgences/Releve_horaire_urgences_7jours.csv"
+url = "https://www.msss.gouv.qc.ca/professionnels/statistiques/documents/urgences/Releve_horaire_urgences_7jours.csv"
 df = pd.read_csv(url, encoding="latin1")
 
 # get current date and time
