@@ -1,40 +1,38 @@
-name: hospital_occupancy_tracker
-## !!! renv.lock file must be in directory !!!
+name: py_hospital_occupancy_tracker 
 
-## script runs around 1pm local time
+# on: push
+
+# or set timer (runs at 16:00 utc ~ noon here)
 on:
   schedule:
   - cron: 0 16 * * *
-  
-## run script on push
-#on:
-#  push:
-#    branches: 
-#      - main
 
 jobs:
   get-data-from-csv:
     runs-on: ubuntu-latest
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+      
     steps:
       - uses: actions/checkout@v3
-      
-      # setup R and packages 
-      - uses: r-lib/actions/setup-r@v2
+        
+      - name: Set up Python
+        uses: actions/setup-python@v4
         with:
-          use-public-rspm: true
+          python-version: '3.10'
           
-      # reads renv file for packages
-      - uses: r-lib/actions/setup-renv@v2
-      - run: Rscript hospital_occupancy_tracker.R
-
-     # add file to data folder, commit, push
-      - name: commit files
+      - name: Install Python packages
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      
+      - name: Run script
+        run: python hospital_occupancy_tracker.py
+        
+      - name: Commit files
         run: |
           git config --local user.name actions-user
           git config --local user.email "actions@github.com"
-          git add data/* img/*
+          git add data/*
           git commit -am "Scheduled Github Action on $(date)"
           git push origin main
-        
