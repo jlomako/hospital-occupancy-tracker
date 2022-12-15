@@ -13,3 +13,4 @@ This bot uses cron jobs to track occupancy rates in local emergency rooms. It re
 * renv.lock must stay in direcory (includes packages + versions)
 * bot runs on ubuntu now!
 * rewrote the whole script in python, added .py script with requirements - will write new yml and then do the switch
+* bot runs in Python now
