@@ -10,6 +10,6 @@ This bot uses cron jobs to track occupancy rates in local emergency rooms. Data 
 * data source wasn't available from Sep 15-19, replaced missing data with data from pdfscraper
 * created new yml file that reads packages from renv.lock
 * bot runs on ubuntu now
-* rewrote the whole script in python, added .py script with requirements.txt - will write new yml workflow and then do the switch
+* rewrote the whole script in python, added .py script with requirements.txt - will write new yml workflow and then switch from R to Python
 * removed plots from script as this is done in shiny in <a href = "https://github.com/jlomako/Montreal-ER">Montreal-ER</a>
 * (faster) bot runs in Python now
