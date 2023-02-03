@@ -1,5 +1,7 @@
 # hospital-occupancy-tracker
 [![hospital_occupancy_tracker](https://github.com/jlomako/hospital-occupancy-tracker/actions/workflows/hospital_occupancy_tracker.yml/badge.svg)](https://github.com/jlomako/hospital-occupancy-tracker/actions/workflows/hospital_occupancy_tracker.yml)
+[![save_data_to_files](https://github.com/jlomako/hospital-occupancy-tracker/actions/workflows/save_data_to_files.yml/badge.svg)](https://github.com/jlomako/hospital-occupancy-tracker/actions/workflows/save_data_to_files.yml)
+[![save_wait_time_to_files](https://github.com/jlomako/hospital-occupancy-tracker/actions/workflows/get_wait_times.yml/badge.svg)](https://github.com/jlomako/hospital-occupancy-tracker/actions/workflows/get_wait_times.yml)
 
 This bot uses cron jobs to track occupancy rates in local emergency rooms. Data is collected on a daily/hourly basis.
 The first version of this bot was written in R and has been moved to <a href = "https://github.com/jlomako/hospital-occupancy-tracker-R">hospital-occupancy-tracker-R</a>.
