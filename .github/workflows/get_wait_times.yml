@@ -1,13 +1,13 @@
 name: save_wait_time_to_files
 
-on: push
+# on: push
 
 ## script collects average wait times from previous day 
 ## will run only once per day
 # set timer = 14:05 utc
-#on:
-# schedule:
-# - cron: 5 14 * * *
+on:
+ schedule:
+ - cron: 5 14 * * *
 
 jobs:
   get-data:
