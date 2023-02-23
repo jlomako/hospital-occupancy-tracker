@@ -1,13 +1,13 @@
 name: save_data_to_files
 # runs every hour
 
-# on: push
+on: push
 
 ## script will run around 1pm local time
 # set timer: at minute 55
-on:
- schedule:
- - cron: 55 * * * *
+#on:
+# schedule:
+# - cron: 55 * * * *
 
 jobs:
   get-data:
