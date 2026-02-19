@@ -1,11 +1,11 @@
 name: hospital_occupancy_tracker 
 
-# on: push
+on: push
 
 # or set timer (runs at 16:00 utc ~ noon here)
-on:
-  schedule:
-  - cron: 0 16 * * *
+# on:
+#   schedule:
+#   - cron: 0 16 * * *
 
 jobs:
   get-data-from-csv:
